@@ -1,3 +1,3 @@
-const getUnnanotatedImageNames = async () => [];
+const getUnnanotatedImageNames = async () => ['Photo.jpg'];
 
 export default getUnnanotatedImageNames;

@@ -8,17 +8,17 @@ import saveAnnotation from './saveAnnotation';
 const app = express();
 const server = http.createServer(app);
 
-app.use('/getUnnanotatedImageNames', async (_, res) => {
+app.use('/getUnnanotatedImageNames', (_, res) => {
   'Returns the names of the images in /images that are not annotated';
 
-  const unnanotatedImageNames = await getUnnanotatedImageNames();
+  const unnanotatedImageNames = getUnnanotatedImageNames();
   res.send(unnanotatedImageNames);
 });
 
-app.use('/saveAnnotation', async (req, res) => {
+app.use('/saveAnnotation', (req, res) => {
   'Saves the annotations';
 
-  await saveAnnotation(req.query);
+  saveAnnotation(req.query);
   res.send({ success: true });
 });
 

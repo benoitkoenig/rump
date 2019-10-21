@@ -24,10 +24,11 @@ class Main extends React.Component {
     return () => this.setState({ [key]: !this.state[key] });
   }
 
-  async submit () {
+  submit = async () => {
     const { above, below, behind, inFront, unnatotatedImages } = this.state;
-    const response = await fetch({ uri: `/saveAnnotation?img=${unnatotatedImages[0]}&above=${above}&below=${below}&behind=${behind}&inFront=${inFront}` });
-    if (response !== 'ok') {
+    const responsePromise = await fetch(`/saveAnnotation?img=${unnatotatedImages[0]}&above=${above}&below=${below}&behind=${behind}&inFront=${inFront}`);
+    const response = await responsePromise.json();
+    if (!response.success) {
       return alert('Response is not ok');
     }
     this.setState({ unnatotatedImages: unnatotatedImages.slice(1) });

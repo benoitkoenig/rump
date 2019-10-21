@@ -19,7 +19,7 @@ app.use('/saveAnnotation', async (req, res) => {
   'Saves the annotations';
 
   await saveAnnotation(req.query);
-  res.send('ok');
+  res.send({ success: true });
 });
 
 app.use('/images', express.static(path.join(__dirname, '/images')));

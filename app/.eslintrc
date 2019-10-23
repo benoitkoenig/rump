@@ -5,7 +5,8 @@
     "env": { "jest": true },
     "rules": {
         "max-len": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "object-curly-newline": "off",
     },
     "globals": {
         "fetch": false

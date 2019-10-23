@@ -1,8 +1,8 @@
-import Permissions from 'expo-permissions';
+import * as Permissions from 'expo-permissions';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import AskCameraPermission from './components/aksCameraPermission';
+import AskCameraPermission from './components/askCameraPermission';
 import Header from './components/header';
 
 const styles = StyleSheet.create({

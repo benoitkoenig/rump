@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     backgroundColor: '#00d0c0',
-    textAlign: 'center',
   },
 
   title: {
@@ -13,6 +12,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 24,
     fontSize: 24,
+    textAlign: 'center',
   },
 });
 

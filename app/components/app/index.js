@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 
 import AskCameraPermission from './components/askCameraPermission';
 import Header from './components/header';
+import Menu from './components/menu';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +34,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header />
-        { hasCameraPermission === false ? <AskCameraPermission ask={this.askPermission} /> : null }
+        { hasCameraPermission === false ? <AskCameraPermission ask={this.askPermission} /> : <Menu /> }
       </View>
     )
   }

@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
 
   title: {
     color: '#fafafa',
-    marginTop: '1em',
-    marginBottom: '1em',
-    fontSize: '1.2em',
+    marginTop: 24,
+    marginBottom: 24,
+    fontSize: 24,
   },
 });
 

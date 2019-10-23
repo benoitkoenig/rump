@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Text, View } from 'react-native';
 
@@ -9,5 +10,9 @@ const AskCameraPermission = ({ ask }) => (
     <Text style={styles.link} onPress={ask}>Give permission</Text>
   </View>
 );
+
+AskCameraPermission.propTypes = {
+  ask: PropTypes.string.isRequired,
+};
 
 export default AskCameraPermission;

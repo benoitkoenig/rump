@@ -9,9 +9,12 @@ import Menu from './components/menu';
 import styles from './styles';
 
 class App extends React.Component {
-  state = {
-    hasCameraPermission: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasCameraPermission: null,
+    };
+  }
 
   async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -31,7 +34,7 @@ class App extends React.Component {
         <Header />
         { hasCameraPermission === false ? <AskCameraPermission ask={this.askPermission} /> : <Menu /> }
       </View>
-    )
+    );
   }
 }
 

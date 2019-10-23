@@ -1,17 +1,12 @@
 import * as Permissions from 'expo-permissions';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 import AskCameraPermission from './components/askCameraPermission';
 import Header from './components/header';
 import Menu from './components/menu';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#101010',
-  },
-});
+import styles from './styles';
 
 class App extends React.Component {
   state = {

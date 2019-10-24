@@ -27,6 +27,7 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  start: () => dispatch({ type: 'START' }),
   toggleMinimumSpeed: () => dispatch({ type: 'TOGGLE_MINIMUM_SPEED' }),
   toggleTimer: () => dispatch({ type: 'TOGGLE_TIMER' }),
   toggleJumpsCount: () => dispatch({ type: 'TOGGLE_JUMPS_COUNT' }),
@@ -57,6 +58,7 @@ class Menu extends React.Component {
 
   render() {
     const {
+      start,
       minimumSpeedChecked,
       minimumSpeed,
       timerChecked,
@@ -97,7 +99,7 @@ class Menu extends React.Component {
           </View>
         </View>
         <View style={styles.start}>
-          <Text style={styles.startText}>Start</Text>
+          <Text style={styles.startText} onPress={start}>Start</Text>
         </View>
         <TimePicker ref={this.setTimePicker} onCancel={timePicker.close} onConfirm={this.updateTimer} maxHour={59} selectedHour={timerMinutes} selectedMinutes={timerSeconds} />
       </View>

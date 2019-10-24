@@ -1,4 +1,5 @@
 const initialState = {
+  isMenuVisible: true,
   minimumSpeedChecked: false,
   minimumSpeed: 2,
   timerChecked: false,
@@ -10,6 +11,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'START': {
+      return { ...state, isMenuVisible: false };
+    }
     case 'TOGGLE_MINIMUM_SPEED': {
       return { ...state, minimumSpeedChecked: !state.minimumSpeedChecked };
     }
